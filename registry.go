@@ -138,7 +138,7 @@ func (r *Registry) Deregister(ctx context.Context, service *registry.ServiceInst
 		if _, err = r.cli.DeregisterInstance(vo.DeregisterInstanceParam{
 			Ip:          host,
 			Port:        uint64(p),
-			ServiceName: service.Name + "." + u.Scheme,
+			ServiceName: service.Name,
 			GroupName:   r.opts.group,
 			Cluster:     r.opts.cluster,
 			Ephemeral:   true,
